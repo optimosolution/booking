@@ -1,0 +1,27 @@
+/*.register-container {
+    margin: 0 auto;
+    width: 538px;
+}
+
+.user-info{color:#666; font-weight: 600; padding-top:5px;} 
+.form-horizontal .control-label{padding-right:7px;}
+.form-horizontal .control-group{ margin-bottom:10px;}
+.help-block{background: none repeat scroll 0 0 bisque;
+    border: 1px solid !important;
+    margin-bottom: 10px !important;
+    text-align: center;
+    width: 50%;
+	padding: 3px 0;}
+.grid-view .table .button-column{width:80px !important;}
+.widget-head h1{padding:5px 0; font-size:32px;}*/
+.tab-content_appointment{overflow: none !important; width:90%; }
+.rowInput{margin-bottom:10px;}
+.external-event{cursor: pointer !important;}
+.serviceListLink, .serviceListLink:hover {text-decoration: none !important; }
+/*.external-event:hover {color: #6fb3e0 !important; font-size: 16px !important;  } */
+#external-events .label-success:hover{background-color: #6fb3e0 !important;}
+.linkServiceFontIco{float:right; padding: 7px 10px; font-size: 20px;}
+.marginBot10px{margin-bottom: 10px;}
+.marginTop10px{margin-top: 10px;}
+.errorSummary, .help-block{color:#d15b47;}
+#user-form{width:40%;}

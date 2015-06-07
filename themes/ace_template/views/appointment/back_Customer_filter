@@ -1,0 +1,135 @@
+<?php
+/* @var $this AppointmentController */
+/* @var $model Appointment */
+
+
+$this->breadcrumbs=array(
+	'Appointments'=>array('index'),
+	'Manage',
+);
+
+$this->menu=array(
+	array('label'=>'List Appointment', 'url'=>array('index')),
+	array('label'=>'Create Appointment', 'url'=>array('create')),
+);
+
+Yii::app()->clientScript->registerScript('search_appointment', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#appointment-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
+?>
+<h1>filtered customer list</h1>
+ 
+<div class="form" style='width:50% !important; margin-top:20px;'>
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+//'action'=>Yii::app()->createUrl($this->route),
+'action'=>Yii::app()->createUrl('//appointment/date_range_select'),
+'method'=>'get',
+         )); ?>
+<fieldset>
+<legend>Filter by recent appointments:</legend>
+	<div class="control-group" style="margin:10px; ">
+		
+        <label class="control-label" for="date_from"><?php echo $form->labelEx($model, 'Date From'); ?></label>
+	 	<?php $this->widget('zii.widgets.jui.CJuiDatePicker',
+	 		array(
+	  		'model'=>$model, 
+			'name'=>'Process[time_up_from]',
+	       	// Model attribute filed which hold user input
+	  		'options'=>array(
+	    	'showAnim'=>'fold',
+	    	'dateFormat'=>'yy-mm-dd',),
+	    	'htmlOptions'=>array('style'=>'', 'size'=>15,
+	    	//'value'=>date('Y-m-d'),
+	    	/*'onchange'=>"$.fn.yiiGridView.update('books-grid', {data: $(this).serialize()});" */),));?>
+   
+    	<label class="control-label" for="date_from"><?php echo $form->labelEx($model, 'Date To'); ?></label>
+	   	<?php $this->widget('zii.widgets.jui.CJuiDatePicker',
+	    	array(
+	  		'model'=>$model, 
+			'name'=>'Process[time_up_to]',
+	      	 // Model attribute filed which hold user input
+		  	'options'=>array(
+	    	'showAnim'=>'fold',
+	    	'dateFormat'=>'yy-mm-dd',),
+	    	'htmlOptions'=>array(
+	    	'style'=>'','size'=>15,
+	    //'value'=>date('Y-m-d'),
+	    /*'onchange'=>"$.fn.yiiGridView.update('books-grid', {data:      $(this).serialize()});"*/  ),));?>
+
+	    <?php echo CHtml::submitButton('Search', array('class' => 'btn btn-primary btn-mini', 'style'=>'padding:2px !important; top:-2px; left: 20px;')); ?>
+   </div>
+ </fieldset>
+<?php $this->endWidget(); ?>
+</div>
+
+<?php
+		$company=Yii::app()->user->company;
+		$shop_id=Yii::app()->user->shop_id;
+ 		$user_id=Yii::app()->user->id;
+
+	 
+		$this->widget('zii.widgets.grid.CGridView', array(
+		'id'=>'appointment-grid',
+		//'dataProvider'=>$model->search_appointment(), 'shop_id='.$shop_id.' AND company_id='.$company.' AND status=1'
+		'dataProvider'=>$model->search_appointment(array('condition'=>'shop_id='.$shop_id.' AND company_id='.$company.' AND status=1')),
+		'filter'=>$model,
+		'columns'=>array(
+			array(
+                'header'=>'Sl.',
+                'value'=>'$this->grid->dataProvider->pagination->offset + $row+1',       //  row is zero based
+                'htmlOptions' => array('style' => "text-align:center; width:50px !important;", 'title' => 'ID'),
+       		 ),
+			array(
+	                'name' => 'customer_id',
+	                'value' => 'User::get_user_name($data->customer_id)',
+	                'filter' => CHtml::activeDropDownList($model, 'customer_id', CHtml::listData(User::model()->findAll(array('condition' => 'group_id=8 AND company=' . Yii::app()->user->company.' AND shop_id=' . Yii::app()->user->shop_id, "order" => "name")), 'id', 'name'), array('empty' => 'All')),
+	                'htmlOptions' => array('style' => "text-align:left; width:200px;"),
+	            ),
+			array(
+	                'name' => 'email', //want to use the label as email
+ 	                'value' => 'User::get_user_email($data->customer_id)',
+	                //'filter' => CHtml::activeDropDownList($model, 'customer_id', CHtml::listData(User::model()->findAll(array('condition' => 'group_id=8 AND company=' . Yii::app()->user->company.' AND shop_id=' . Yii::app()->user->shop_id, "order" => "name")), 'id', 'name'), array('empty' => 'All')),
+	                'htmlOptions' => array('style' => "text-align:left; width:200px;"),
+	            ),
+			array(
+	                'name' => 'shop_id',
+	                'value' => 'Shop::get_shop($data->shop_id)',
+	                'filter' => CHtml::activeDropDownList($model, 'shop_id', CHtml::listData(Shop::model()->findAll(array('condition' => 'company=' . Yii::app()->user->company, "order" => "title")), 'id', 'title'), array('empty' => 'All')),
+	                'htmlOptions' => array('style' => "text-align:left; width:150px;"),
+	            ),
+			
+			//'appoint_date',
+			  array(
+	                'name' => 'total_cost',
+	                'value' => '$data->total_cost',
+	                'htmlOptions' => array('style' => "text-align:left; width:50px;"),
+	            ),
+			
+			array(
+				'class'=>'CButtonColumn',
+			),
+		),
+	)); 
+ 
+?>	
+ <?php echo CHtml::link('<i class="icon-plus"></i> Create New Appointment', array('create'), array('class' => 'btn btn-info btn-mini marginTop10px')); ?>
+
+<?php /* echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
+<div class="search-form" style="display:none">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+*/ ?>
+<?php 
+?>

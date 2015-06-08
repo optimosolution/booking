@@ -38,7 +38,7 @@ class AppointmentController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index', 'view', 'create', 'update', 'calender', 'admin', 'customerFilter', 'adminCustomer', 'filterCustomer', 'dateRangeSelect', 'checkAppointments', 'getService_id_fromAJAX', 'detailViewCustomer', 'mail'),
+                'actions' => array('index', 'view', 'create', 'update', 'calender', 'admin', 'customerFilter', 'adminCustomer', 'filterCustomer', 'dateRangeSelect', 'checkAppointments', 'getService_id_fromAJAX', 'detailViewCustomer', 'mail','filterListView'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -195,6 +195,21 @@ class AppointmentController extends Controller {
         ));
     }
 
+
+    public function actionFilterListView()
+    {
+        //$dataProvider=new CActiveDataProvider('Appointment');
+        $dataProvider=new CActiveDataProvider('Appointment', array(
+            'criteria'=>array(
+                'condition'=>'customer_id=:customerId',
+                'params'=>array(':customerId'=>$_GET['customer_id']),
+            ),
+        ));
+        $this->render('index',array(
+            'dataProvider'=>$dataProvider,
+        ));
+    }
+    
     /**
      * Manages all models.
      */

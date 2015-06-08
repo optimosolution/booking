@@ -138,20 +138,20 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 'view' => array(
                     'label' => '',
                     'imageUrl' => '',
-                    'url' => 'Yii::app()->createUrl("/appointment/detailViewCustomer", array("id"=>$data["id"]))',
+                   'url' => 'Yii::app()->createUrl("/appointment/filterListView", array("customer_id"=>$data["customer_id"]))',
                     'options' => array('class' => 'btn btn-xs btn-info fa fa-eye'),
                 ),
                 'update' => array(
                     'label' => '',
                     'imageUrl' => '',
                     'url' => 'Yii::app()->createUrl("/appointment/update", array("id"=>$data["id"]))',
-                    'options' => array('class' => 'btn btn-xs btn-info fa fa-pencil', 'style' => ' '),
+                    'options' => array('class' => 'btn btn-xs btn-info fa fa-pencil', 'style' => 'display:none;  '),
                 ),
                 'delete' => array(
                     'label' => '',
                     'imageUrl' => '',
                     'url' => 'Yii::app()->createUrl("/appointment/delete", array("id"=>$data["id"]))',
-                    'options' => array('class' => 'btn btn-xs btn-danger fa fa-trash-o', 'style' => ' '),
+                    'options' => array('class' => 'btn btn-xs btn-danger fa fa-trash-o', 'style' => ' display:none; '),
                 ),
             ),
         ),

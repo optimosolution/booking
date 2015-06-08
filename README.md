@@ -1,2 +1,2 @@
 # booking
-Booking Application for RnD 
+Booking Application

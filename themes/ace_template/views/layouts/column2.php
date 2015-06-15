@@ -759,7 +759,7 @@ $group_id=Yii::app()->user->group_id;
 								<b class="arrow"></b>
 							</li>
 							<li class="">
-								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Assign Service') . '</span>', array('/staff/assignService')); ?>
+								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Assign Service') . '</span>', array('/staffService/create')); ?>
 								<b class="arrow"></b>
 							</li>
 							<li class="">
@@ -873,6 +873,34 @@ $group_id=Yii::app()->user->group_id;
 								<b class="arrow"></b>
 							</li>
  							<li class="">
+								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Message to Selected Customers') . '</span>', array('mailAdmin/create')); ?>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-tasks"></i>
+							<span class="menu-text">Mass Email</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Massmail Contents') . '</span>', array('massmailContent/admin')); ?>
+
+								<b class="arrow"></b>
+							</li>
+ 							<li class="">
+								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Create New Massmail') . '</span>', array('massmailContent/create')); ?>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
 								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Message to Selected Customers') . '</span>', array('mailAdmin/create')); ?>
 
 								<b class="arrow"></b>

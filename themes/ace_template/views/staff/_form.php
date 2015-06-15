@@ -28,7 +28,7 @@
 	 <?php 
      	if(!empty($_GET['shop_id'])){
     ?> 
- 		<?php echo $form->textField($model,'shop_id',array('size'=>30, 'value'=>$_GET['shop_id'], 'style'=>'')); ?> 
+ 		<?php echo $form->textField($model,'shop_id',array('size'=>30, 'value'=>$_GET['shop_id'], 'style'=>'display:none;')); ?> 
     <?php } else {?> 
 	<div class="control-group marginBot10px">
         <label class="control-label" for="shop_id"><?php echo $form->labelEx($model, 'shop_id'); ?></label> </br>
@@ -76,13 +76,13 @@
     <div class="control-group marginBot10px">
         <label class="control-label" for="state"><?php echo $form->labelEx($model, 'state'); ?></label>
         <div class="controls">                               
-            <?php State::get_sate_new('User', 'state'); ?> 
+            <?php State::get_sate_new('Staff', 'state'); ?> 
         </div>
     </div>
     <div class="control-group marginBot10px">
         <label class="control-label" for="city"><?php echo $form->labelEx($model, 'city'); ?></label>
         <div class="controls">                               
-            <?php City::get_city_new('User', 'city'); ?> 
+            <?php City::get_city_new('Staff', 'city'); ?> 
         </div>
     </div>
    
@@ -103,7 +103,7 @@
 
 	<div class="control-group marginBot10px">
  		<?php echo $form->textField($second_contact,'email_second_contact',array('size'=>30, 'placeholder'=>'Email of Contact Person')); ?> <span class=" ">*</span>
-		<?php echo $form->error($second_contact,'email'); ?>
+		<?php echo $form->error($second_contact,'email_second_contact'); ?>
 	</div>
 
 	<div class="control-group marginBot10px">

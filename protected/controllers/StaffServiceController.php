@@ -41,7 +41,7 @@ class StaffServiceController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -73,14 +73,19 @@ class StaffServiceController extends Controller
 	{
 		$model=new StaffService;
 
+		$company_id=Yii::app()->user->company;
+		$shop_id=Yii::app()->user->shop_id;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['StaffService']))
 		{
 			$model->attributes=$_POST['StaffService'];
+			$model->company_id=$company_id;
+			$model->shop_id=$shop_id;
+
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(

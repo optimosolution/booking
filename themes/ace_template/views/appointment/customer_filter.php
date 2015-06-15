@@ -2,6 +2,12 @@
 /* @var $this AppointmentController */
 /* @var $model Appointment */
 
+$company = Yii::app()->user->company;
+$shop_id = Yii::app()->user->shop_id;
+$user_id = Yii::app()->user->id;
+
+$currency_short_code= Currency::get_currency_short_code(Shop::get_currency_id($shop_id));
+
 
 $this->breadcrumbs = array(
     'Appointments' => array('customerFilter'),
@@ -30,52 +36,103 @@ $('.search-form form').submit(function(){
   ));  ?>
   </div><!-- search-form -->
   <?php */ ?>
+
+<div style="width:45%; float:left;margin-right:10px;">
 <?php
-$form = $this->beginWidget('CActiveForm', array(
+    $form = $this->beginWidget('CActiveForm', array(
     'id' => 'page-form',
     'action' => Yii::app()->createUrl('//appointment/date_range_select'),
     'enableAjaxValidation' => true,
         ));
 ?>
-<legend>Filter by Selecting date range</legend>
-<b>From :</b>
-<?php
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-    'name' => 'from_date', // name of post parameter
-    'value' => (isset(Yii::app()->request->cookies['from_date'])) ? Yii::app()->request->cookies['from_date']->value : '',
-    'options' => array(
-        'showAnim' => 'fold',
-        'dateFormat' => 'yy-mm-dd',
-    ),
-    'htmlOptions' => array(
-        'style' => 'height:30px;'
-    ),
-));
-?>
-<b>To :</b>
-<?php
-$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-    'name' => 'to_date',
-    'value' => (isset(Yii::app()->request->cookies['to_date'])) ? Yii::app()->request->cookies['to_date']->value : '',
-    //'value'=>Yii::app()->request->cookies['to_date']->value,
-    'options' => array(
-        'showAnim' => 'fold',
-        'dateFormat' => 'yy-mm-dd',
-    ),
-    'htmlOptions' => array(
-        'style' => 'height:30px;'
-    ),
-));
-?>
-<?php echo CHtml::submitButton('Go');  // submit button?>
-<?php $this->endWidget(); ?>
+ <fieldset>
+    <legend>Filter by date range</legend>
+   <b style="float:left; padding-right:2px; margin-top:2px;">From :</b>
+    <?php
+    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+        'name' => 'from_date', // name of post parameter
+        'value' => (isset(Yii::app()->request->cookies['from_date'])) ? Yii::app()->request->cookies['from_date']->value : '',
+        'options' => array(
+            'showAnim' => 'fold',
+            'dateFormat' => 'yy-mm-dd',
+        ),
+        'htmlOptions' => array(
+            'style' => 'height:30px; width:40%;float:left;',
+             'placeholder'=>'0000-00-00'
+        ),
+    ));
+    ?>
+    
+    <b style="float:left; padding-right:2px; margin-top:2px;">To :</b>
+    <?php
+    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+        'name' => 'to_date',
+        'value' => (isset(Yii::app()->request->cookies['to_date'])) ? Yii::app()->request->cookies['to_date']->value : '',
+        //'value'=>Yii::app()->request->cookies['to_date']->value,
+        'options' => array(
+            'showAnim' => 'fold',
+            'dateFormat' => 'yy-mm-dd',
+        ),
+        'htmlOptions' => array(
+            'style' => 'height:30px; width:40%;float:left;',
+            'placeholder'=>'0000-00-00'
+        ),
+    ));
+    ?>
+    </fieldset>
+    </br>
+    <div class="clear" style="clear:left;"></div>
+    <?php 
+        echo CHtml::submitButton('Apply Filter', array('class'=>'btn btn-primary btn-mini',"style"=>"margin-left:42px;"));  // submit button
+        $this->endWidget(); 
+    ?>
+</div> 
+
+<div style="width:45%; float:left;">
+    <?php
+        $form = $this->beginWidget('CActiveForm', array(
+        'id' => 'cost_range-form',
+        'action' => Yii::app()->createUrl('//appointment/cost_range'),
+        'enableAjaxValidation' => true,
+            ));
+    ?>
+	<fieldset>
+    <legend>Filter by Cost range</legend>
+    <b style="float:left; padding-right:2px; margin-top:2px;">From :</b>
+    <?php echo $form->textField($model,'cost_range_from', array(
+        'name' => 'cost_range_from',
+        'value' => (isset(Yii::app()->request->cookies['cost_range_from'])) ? Yii::app()->request->cookies['cost_range_from']->value : '',
+        'style'=>'width:40%;float:left;',
+        'class'=>'form-control marginBot10px marginBot10px', 
+        'placeholder'=>'0.00 .'.$currency_short_code
+    )); ?>
+
+
+    <b style="float:left; padding-right:2px; margin-top:2px;">To :</b>
+    <?php echo $form->textField($model,'cost_range_to',array(
+        'name' => 'cost_range_to',
+        'value' => (isset(Yii::app()->request->cookies['cost_range_to'])) ? Yii::app()->request->cookies['cost_range_to']->value : '',
+        'style'=>'width:40%;float:left;',
+        'class'=>'form-control marginBot10px marginBot10px', 
+        'placeholder'=>'0.00 .'.$currency_short_code
+    )); ?>
+	 </fieldset>
+     <div class="clear" style="clear:left;"></div>
+
+    <?php 
+        echo CHtml::submitButton('Apply Filter', array('class'=>'btn btn-primary btn-mini',"style"=>"margin-left:42px;"));  // submit button
+        $this->endWidget(); 
+    ?>
+</div>
+<div class="clear" style="clear:left;"></div>
+<br/>
+
 <?php
 $form = $this->beginWidget('CActiveForm', array(
     'enableAjaxValidation' => true, 'action' => Yii::app()->createUrl('appointment/mail'),
         ));
-$company = Yii::app()->user->company;
-$shop_id = Yii::app()->user->shop_id;
-$user_id = Yii::app()->user->id;
+
+
 //$date=time();
 
 $this->widget('zii.widgets.grid.CGridView', array(

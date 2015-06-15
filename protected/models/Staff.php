@@ -30,6 +30,15 @@
  */
 class Staff extends CActiveRecord {
 
+
+    /*Declearing soem variable to Entry an another model's data by the same Form
+        - tried with different way but that is not working...
+    */
+    public $name_second_contact;
+    public $email_second_contact;
+    public $phone_second_contact;
+    public $address_second_contact;
+    public $saff_id;
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -59,9 +68,9 @@ class Staff extends CActiveRecord {
             array('username,email', 'unique'),
             array('username, website', 'length', 'max' => 150),
             array('email, password, activation, phone, mobile, fax', 'length', 'max' => 100),
-            array('registerDate, lastvisitDate, address, company', 'safe'),
+            array(' registerDate, lastvisitDate, address, company,name_second_contact,email_second_contact, phone_second_contact, address_second_contact,saff_id ', 'safe'),
             array('email', 'email', 'checkMX' => true),
-            array('profile_picture', 'file', 'types' => 'jpg,jpeg,gif,png', 'allowEmpty' => true, 'minSize' => 2, 'maxSize' => 1024 * 1024 * 2, 'tooLarge' => 'The file was larger than 2MB. Please upload a smaller file.', 'wrongType' => 'File format was not supported.', 'tooSmall' => 'File size was too small or empty.'),
+            array('profile_picture', 'file', 'safe'=>true, 'types' => 'jpg,jpeg,gif,png', 'allowEmpty' => true, 'minSize' => 2, 'maxSize' => 1024 * 1024 * 2, 'tooLarge' => 'The file was larger than 2MB. Please upload a smaller file.', 'wrongType' => 'File format was not supported.', 'tooSmall' => 'File size was too small or empty.'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, name, expertise, shop_id, username, email, password, registerDate, lastvisitDate, activation, group_id, country, state, city, phone, mobile, fax, website, user_type, status, storeowner', 'safe', 'on' => 'search'),

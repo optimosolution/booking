@@ -32,6 +32,8 @@ class Appointment extends CActiveRecord {
     public $from_date;
     public $to_date;
 
+    public $cost_range_from;
+    public $cost_range_to;
     /**
      * @return array validation rules for model attributes.
      */
@@ -41,7 +43,7 @@ class Appointment extends CActiveRecord {
         return array(
             array('appoint_date, appoint_time, service_category , service_id, customer_id', 'required'),
             array('company_id, shop_id, customer_id, staff_id, service_category, service_id, total_cost', 'numerical', 'integerOnly' => true),
-            array('end_time,appoint_time,applied_date,appointment_count, note, email,date_first,date_last,from_date, to_date', 'safe'),
+            array('end_time,appoint_time,applied_date,appointment_count, note, email,date_first,date_last,from_date, to_date,cost_range_from,cost_range_to', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('id, company_id,applied_date,appointment_count,appoint_date, from_date, to_date, date_first,date_last,email, shop_id, customer_id, staff_id, service_category, service_id, appoint_time, end_time, total_cost, note, status', 'safe', 'on' => 'search'),
@@ -103,12 +105,25 @@ class Appointment extends CActiveRecord {
         } elseif (!empty($this->to_date) && !empty($this->from_date)) {
             $criteria->condition = "appoint_date  >= '$this->from_date' and appoint_date <= '$this->to_date'";
         }
+
+
         $criteria->group = ('customer_id');
         $criteria->order = 'total_amount DESC';
         $criteria->addCondition('appoint_date <= DATE(NOW())');
         $criteria->select = array(
             '*' => new CDbExpression('customer_id, shop_id, SUM(total_cost) AS total_amount, COUNT(customer_id) AS number_of_visit'),
         );
+
+
+        if (!empty($this->cost_range_from) && empty($this->cost_range_to)) {
+            $criteria->condition = "total_amount >= '$this->cost_range_from'";  // date is database date column field
+        } elseif (!empty($this->cost_range_to) && empty($this->cost_range_from)) {
+            $criteria->condition = "total_amount <= '$this->cost_range_to'";
+        } elseif (!empty($this->cost_range_to) && !empty($this->cost_range_from)) {
+            $criteria->condition = "total_amount  >= '$this->cost_range_from' and total_amount <= '$this->cost_range_to'";
+        }
+
+        
         //$criteria->condition='your_condition';
         //$user = User::model()->find($criteria);
         $criteria->limit = 100;

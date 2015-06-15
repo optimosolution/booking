@@ -1089,3 +1089,1010 @@ Stack trace:
 #29 {main}
 REQUEST_URI=/booking/index.php?r=mailCustomer/admin
 ---
+2015/06/08 10:33:35 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "F:\xampp\htdocs\booking\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in F:\xampp\htdocs\framework\yii\framework\web\CAssetManager.php:138
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('F:\xampp\htdocs...')
+#1 F:\xampp\htdocs\framework\yii\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 F:\xampp\htdocs\framework\yii\framework\web\CClientScript.php(462): CAssetManager->publish('F:\xampp\htdocs...')
+#3 F:\xampp\htdocs\framework\yii\framework\web\CClientScript.php(499): CClientScript->getCoreScriptUrl()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CClientScript.php(315): CClientScript->getPackageBaseUrl('yiiactiveform')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CClientScript.php(208): CClientScript->renderCoreScripts()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(351): CClientScript->render('<!DOCTYPE html>...')
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(788): CController->processOutput('<!DOCTYPE html>...')
+#8 F:\xampp\htdocs\booking\protected\controllers\SiteController.php(140): CController->render('login', Array)
+#9 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#19 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/booking/index.php?r=site/login
+---
+2015/06/08 13:34:56 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.TbListView" is invalid. Make sure it points to an existing directory or file.' in F:\xampp\htdocs\framework\yii\framework\YiiBase.php:341
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AppointmentController), 'bootstrap.widge...', Array)
+#2 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\appointment\index.php(22): CBaseController->widget('bootstrap.widge...', Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php(210): CController->render('index', Array)
+#9 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): AppointmentController->actionFilterListView()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('filterListView')
+#19 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('appointment/fil...')
+#20 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/booking/index.php?r=appointment/filterListView&customer_id=1035
+HTTP_REFERER=http://localhost/booking/index.php?r=appointment/customerFilter
+---
+2015/06/14 13:43:36 [error] [exception.CException] exception 'CException' with message 'The asset "F:\xampp\htdocs\booking\protected\extensions\yii-ckeditor/assets" to be published does not exist.' in F:\xampp\htdocs\framework\yii\framework\web\CAssetManager.php:257
+Stack trace:
+#0 F:\xampp\htdocs\booking\protected\extensions\yii-ckeditor\CKEditorWidget.php(87): CAssetManager->publish('F:\xampp\htdocs...')
+#1 F:\xampp\htdocs\framework\yii\framework\base\CComponent.php(111): CKEditorWidget->getAssetsUrl()
+#2 F:\xampp\htdocs\booking\protected\extensions\yii-ckeditor\CKEditorWidget.php(34): CComponent->__get('assetsUrl')
+#3 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(147): CKEditorWidget->init()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#5 F:\xampp\htdocs\booking\themes\ace_template\views\massmailContent\_form.php(48): CBaseController->widget('application.ext...', Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#7 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#8 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#9 F:\xampp\htdocs\booking\themes\ace_template\views\massmailContent\create.php(18): CController->renderPartial('_form', Array)
+#10 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#11 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 F:\xampp\htdocs\booking\protected\controllers\MassmailContentController.php(89): CController->render('create', Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): MassmailContentController->actionCreate()
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('massmailContent...')
+#26 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/booking/index.php?r=massmailContent/create
+HTTP_REFERER=http://localhost/booking/
+---
+2015/06/14 13:45:00 [error] [exception.CException] exception 'CException' with message 'The asset "F:\xampp\htdocs\booking\protected\extensions\yii-ckeditor/assets" to be published does not exist.' in F:\xampp\htdocs\framework\yii\framework\web\CAssetManager.php:257
+Stack trace:
+#0 F:\xampp\htdocs\booking\protected\extensions\yii-ckeditor\CKEditorWidget.php(87): CAssetManager->publish('F:\xampp\htdocs...')
+#1 F:\xampp\htdocs\framework\yii\framework\base\CComponent.php(111): CKEditorWidget->getAssetsUrl()
+#2 F:\xampp\htdocs\booking\protected\extensions\yii-ckeditor\CKEditorWidget.php(34): CComponent->__get('assetsUrl')
+#3 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(147): CKEditorWidget->init()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#5 F:\xampp\htdocs\booking\themes\ace_template\views\massmailContent\_form.php(48): CBaseController->widget('application.ext...', Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#7 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#8 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#9 F:\xampp\htdocs\booking\themes\ace_template\views\massmailContent\create.php(18): CController->renderPartial('_form', Array)
+#10 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#11 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 F:\xampp\htdocs\booking\protected\controllers\MassmailContentController.php(89): CController->render('create', Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): MassmailContentController->actionCreate()
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('massmailContent...')
+#26 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/booking/index.php?r=massmailContent/create
+HTTP_REFERER=http://localhost/booking/index.php?r=massmailContent/admin
+---
+2015/06/14 15:28:00 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (111)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/14 15:50:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "assignService".' in F:\xampp\htdocs\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\CController.php(270): CController->missingAction('assignService')
+#1 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('assignService')
+#2 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/assignSer...')
+#3 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/booking/index.php?r=staff/assignService
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 15:52:49 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (111)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/14 16:11:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status=1 ORDER BY name' at line 1. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE shop_id=7AND status=1 ORDER BY name.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php (38)
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php (18)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (93)
+2015/06/14 16:11:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status=1 ORDER BY name' at line 1. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE shop_id=7AND status=1 ORDER BY name' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php(38): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php(18): CController->renderPartial('_form', Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#9 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(93): CController->render('create', Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionCreate()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/cr...')
+#24 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/booking/index.php?r=staffService/create
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 16:13:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status=1 ORDER BY name' at line 1. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE user_id=7AND status=1 ORDER BY name.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php (38)
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php (18)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (93)
+2015/06/14 16:13:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status=1 ORDER BY name' at line 1. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE user_id=7AND status=1 ORDER BY name' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php(38): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php(18): CController->renderPartial('_form', Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#9 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(93): CController->render('create', Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionCreate()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/cr...')
+#24 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/booking/index.php?r=staffService/create
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 16:14:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE user_id=7 ORDER BY name.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php (38)
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php (18)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (93)
+2015/06/14 16:14:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE user_id=7 ORDER BY name' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php(38): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php(18): CController->renderPartial('_form', Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#9 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(93): CController->render('create', Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionCreate()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/cr...')
+#24 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/booking/index.php?r=staffService/create
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 16:14:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE user_id=7 ORDER BY name.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php (38)
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php (18)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (93)
+2015/06/14 16:14:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE user_id=7 ORDER BY name' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php(38): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php(18): CController->renderPartial('_form', Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#9 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(93): CController->render('create', Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionCreate()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/cr...')
+#24 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/booking/index.php?r=staffService/create
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 16:16:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group_id=7 AND status=1 ORDER BY name' at line 1. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE shop_id=7AND group_id=7 AND status=1 ORDER BY name.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php (38)
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php (18)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (93)
+2015/06/14 16:16:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group_id=7 AND status=1 ORDER BY name' at line 1. The SQL statement executed was: SELECT * FROM `os_user` `t` WHERE shop_id=7AND group_id=7 AND status=1 ORDER BY name' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\_form.php(38): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\create.php(18): CController->renderPartial('_form', Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#9 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(93): CController->render('create', Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionCreate()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/cr...')
+#24 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/booking/index.php?r=staffService/create
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 16:35:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'order clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` ORDER BY title.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\admin.php (67)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (157)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/14 16:35:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'order clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` ORDER BY title' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\admin.php(67): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(157): CController->render('admin', Array)
+#9 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionAdmin()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/ad...')
+#20 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/booking/index.php?r=staffService/admin
+HTTP_REFERER=http://localhost/booking/index.php?r=staffService/create
+---
+2015/06/14 16:36:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'order clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` ORDER BY title.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\admin.php (67)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (157)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/14 16:36:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'order clause'. The SQL statement executed was: SELECT * FROM `os_user` `t` ORDER BY title' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\admin.php(67): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(157): CController->render('admin', Array)
+#9 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionAdmin()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/ad...')
+#20 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/booking/index.php?r=staffService/admin
+HTTP_REFERER=http://localhost/booking/index.php?r=staffService/create
+---
+2015/06/14 16:39:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'shop_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `os_service` `t` WHERE shop_id=7 ORDER BY title.
+in F:\xampp\htdocs\booking\themes\ace_template\views\staffService\admin.php (70)
+in F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php (157)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/14 16:39:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'shop_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `os_service` `t` WHERE shop_id=7 ORDER BY title' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\xampp\htdocs\booking\themes\ace_template\views\staffService\admin.php(70): CActiveRecord->findAll(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 F:\xampp\htdocs\booking\protected\controllers\StaffServiceController.php(157): CController->render('admin', Array)
+#9 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffServiceController->actionAdmin()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staffService/ad...')
+#20 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/booking/index.php?r=staffService/admin
+HTTP_REFERER=http://localhost/booking/index.php?r=staffService/create
+---
+2015/06/14 17:14:34 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.company" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\auth\CWebUser.php(140): CComponent->__get('company')
+#1 F:\xampp\htdocs\booking\themes\ace_template\views\layouts\column2.php(5): CWebUser->__get('company')
+#2 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#3 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(784): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#5 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(159): CController->render('create', Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#17 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 17:16:48 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.company" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\auth\CWebUser.php(140): CComponent->__get('company')
+#1 F:\xampp\htdocs\booking\themes\ace_template\views\layouts\column2.php(5): CWebUser->__get('company')
+#2 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#3 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(784): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#5 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(159): CController->render('create', Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#17 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/14 17:17:49 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/14 20:54:06 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.company" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\auth\CWebUser.php(140): CComponent->__get('company')
+#1 F:\xampp\htdocs\booking\themes\ace_template\views\layouts\column2.php(5): CWebUser->__get('company')
+#2 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#3 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(784): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#5 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(159): CController->render('create', Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#17 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 13:23:33 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 13:23:34 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.saff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(159): CComponent->__set('saff_id', '1042')
+#1 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(145): CActiveRecord->__set('saff_id', '1042')
+#2 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#3 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#13 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 13:32:20 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:05:07 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:05:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (143)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:05:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3)' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(143): CActiveRecord->save()
+#3 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#14 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 15:06:12 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:10:07 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:10:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (143)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:10:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3)' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(143): CActiveRecord->save()
+#3 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#14 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 15:39:44 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:39:56 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:40:45 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:41:05 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:43:24 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 15:46:18 [warning] [application] Failed to set unsafe attribute "profile_picture" of "Staff".
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (112)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 16:02:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (143)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 16:02:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3)' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(143): CActiveRecord->save()
+#3 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#14 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:04:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (143)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 16:04:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'staff_id'. The SQL statement executed was: INSERT INTO `os_staff_second_contact` (`name_second_contact`, `email_second_contact`, `phone_second_contact`, `address_second_contact`) VALUES (:yp0, :yp1, :yp2, :yp3)' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(143): CActiveRecord->save()
+#3 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#14 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:06:09 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.saff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(159): CComponent->__set('saff_id', NULL)
+#1 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(129): CActiveRecord->__set('saff_id', NULL)
+#2 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#3 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#13 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:06:55 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.saff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(159): CComponent->__set('saff_id', NULL)
+#1 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(129): CActiveRecord->__set('saff_id', NULL)
+#2 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#3 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#13 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:14:10 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.saff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(159): CComponent->__set('saff_id', '1047')
+#1 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(147): CActiveRecord->__set('saff_id', '1047')
+#2 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#3 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#13 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:15:10 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.staff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('staff_id')
+#1 F:\xampp\htdocs\framework\yii\framework\validators\CNumberValidator.php(78): CActiveRecord->__get('staff_id')
+#2 F:\xampp\htdocs\framework\yii\framework\validators\CValidator.php(213): CNumberValidator->validateAttribute(Object(StaffSecondContact), 'staff_id')
+#3 F:\xampp\htdocs\framework\yii\framework\base\CModel.php(159): CValidator->validate(Object(StaffSecondContact), NULL)
+#4 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(116): CModel->validate()
+#5 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#16 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:15:44 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.staff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('staff_id')
+#1 F:\xampp\htdocs\framework\yii\framework\validators\CRequiredValidator.php(51): CActiveRecord->__get('staff_id')
+#2 F:\xampp\htdocs\framework\yii\framework\validators\CValidator.php(213): CRequiredValidator->validateAttribute(Object(StaffSecondContact), 'staff_id')
+#3 F:\xampp\htdocs\framework\yii\framework\base\CModel.php(159): CValidator->validate(Object(StaffSecondContact), NULL)
+#4 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(116): CModel->validate()
+#5 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#16 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:18:51 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.staff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('staff_id')
+#1 F:\xampp\htdocs\framework\yii\framework\validators\CRequiredValidator.php(51): CActiveRecord->__get('staff_id')
+#2 F:\xampp\htdocs\framework\yii\framework\validators\CValidator.php(213): CRequiredValidator->validateAttribute(Object(StaffSecondContact), 'staff_id')
+#3 F:\xampp\htdocs\framework\yii\framework\base\CModel.php(159): CValidator->validate(Object(StaffSecondContact), NULL)
+#4 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(116): CModel->validate()
+#5 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#16 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:19:17 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.staff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('staff_id')
+#1 F:\xampp\htdocs\framework\yii\framework\validators\CRequiredValidator.php(51): CActiveRecord->__get('staff_id')
+#2 F:\xampp\htdocs\framework\yii\framework\validators\CValidator.php(213): CRequiredValidator->validateAttribute(Object(StaffSecondContact), 'staff_id')
+#3 F:\xampp\htdocs\framework\yii\framework\base\CModel.php(159): CValidator->validate(Object(StaffSecondContact), NULL)
+#4 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(116): CModel->validate()
+#5 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): StaffController->actionCreate()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#15 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/create')
+#16 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/booking/index.php?r=staff/create&shop_id=7
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/create&shop_id=7
+---
+2015/06/15 16:45:23 [error] [exception.CDbException] exception 'CDbException' with message 'Table "os_staff_second_contact" does not have a column named "staff_id".' in F:\xampp\htdocs\framework\yii\framework\db\schema\CDbCommandBuilder.php:591
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1464): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(234): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: StaffController->actionUpdate('1050')
+#3 F:\xampp\htdocs\framework\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(StaffController), Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(StaffController), Object(ReflectionMethod), Array)
+#5 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/update')
+#15 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/booking/index.php?r=staff/update&id=1050
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/admin
+---
+2015/06/15 16:46:40 [error] [exception.CDbException] exception 'CDbException' with message 'Table "os_staff_second_contact" does not have a column named "staff_id".' in F:\xampp\htdocs\framework\yii\framework\db\schema\CDbCommandBuilder.php:591
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1464): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(234): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: StaffController->actionUpdate('1050')
+#3 F:\xampp\htdocs\framework\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(StaffController), Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(StaffController), Object(ReflectionMethod), Array)
+#5 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/update')
+#15 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/booking/index.php?r=staff/update&id=1050
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/admin
+---
+2015/06/15 16:46:55 [error] [php] Undefined variable: second_contact (F:\xampp\htdocs\booking\protected\controllers\StaffController.php:234)
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): StaffController->runAction()
+#3 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): StaffController->filterAccessControl()
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): StaffController->runActionWithFilters()
+#9 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): StaffController->run()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 F:\xampp\htdocs\booking\index.php(14): CWebApplication->run()
+REQUEST_URI=/booking/index.php?r=staff/update&id=1050
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (234)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 16:49:29 [error] [php] Undefined variable: second_contact (F:\xampp\htdocs\booking\themes\ace_template\views\staff\_form.php:100)
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): StaffController->renderFile()
+#1 F:\xampp\htdocs\booking\themes\ace_template\views\staff\update.php(21): StaffController->renderPartial()
+#2 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require()
+#3 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): StaffController->renderInternal()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): StaffController->renderFile()
+#5 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): StaffController->renderPartial()
+#6 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(251): StaffController->render()
+#7 unknown(0): StaffController->actionUpdate()
+#8 F:\xampp\htdocs\framework\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#9 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): StaffController->runAction()
+#12 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#14 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): StaffController->filterAccessControl()
+#15 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#16 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): StaffController->runActionWithFilters()
+#18 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): StaffController->run()
+#19 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\booking\index.php(14): CWebApplication->run()
+REQUEST_URI=/booking/index.php?r=staff/update&id=1050
+in F:\xampp\htdocs\booking\themes\ace_template\views\staff\_form.php (100)
+in F:\xampp\htdocs\booking\themes\ace_template\views\staff\update.php (21)
+in F:\xampp\htdocs\booking\protected\controllers\StaffController.php (251)
+2015/06/15 16:53:48 [error] [exception.CException] exception 'CException' with message 'Property "StaffSecondContact.saff_id" is not defined.' in F:\xampp\htdocs\framework\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(159): CComponent->__set('saff_id', '1050')
+#1 F:\xampp\htdocs\booking\protected\controllers\StaffController.php(245): CActiveRecord->__set('saff_id', '1050')
+#2 [internal function]: StaffController->actionUpdate('1050')
+#3 F:\xampp\htdocs\framework\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(StaffController), Array)
+#4 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(StaffController), Object(ReflectionMethod), Array)
+#5 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#14 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('staff/update')
+#15 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/booking/index.php?r=staff/update&id=1050
+HTTP_REFERER=http://localhost/booking/index.php?r=staff/update&id=1050
+---
+2015/06/15 18:32:18 [error] [php] Undefined index: cost_range_from (F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php:151)
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): AppointmentController->runAction()
+#1 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): AppointmentController->filterAccessControl()
+#4 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): AppointmentController->runActionWithFilters()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): AppointmentController->run()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\booking\index.php(14): CWebApplication->run()
+REQUEST_URI=/booking/index.php?r=appointment/cost_range
+in F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php (151)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 18:33:31 [error] [php] Undefined index: cost_range_from (F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php:151)
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): AppointmentController->runAction()
+#1 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): AppointmentController->filterAccessControl()
+#4 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): AppointmentController->runActionWithFilters()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): AppointmentController->run()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\booking\index.php(14): CWebApplication->run()
+REQUEST_URI=/booking/index.php?r=appointment/cost_range
+in F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php (151)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 18:36:18 [error] [php] Undefined index: cost_range_from (F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php:151)
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): AppointmentController->runAction()
+#1 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): AppointmentController->filterAccessControl()
+#4 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): AppointmentController->runActionWithFilters()
+#7 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): AppointmentController->run()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\booking\index.php(14): CWebApplication->run()
+REQUEST_URI=/booking/index.php?r=appointment/cost_range
+in F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php (151)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 18:39:59 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'total_amount' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM (SELECT customer_id, shop_id, SUM(total_cost) AS total_amount, COUNT(customer_id) AS number_of_visit FROM `os_appointment` `t` WHERE total_amount  >= '500' and total_amount <= '1000' GROUP BY customer_id) sq.
+in F:\xampp\htdocs\booking\themes\ace_template\views\appointment\customer_filter.php (212)
+in F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php (158)
+in F:\xampp\htdocs\booking\index.php (14)
+2015/06/15 18:39:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'total_amount' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM (SELECT customer_id, shop_id, SUM(total_cost) AS total_amount, COUNT(customer_id) AS number_of_visit FROM `os_appointment` `t` WHERE total_amount  >= '500' and total_amount <= '1000' GROUP BY customer_id) sq' in F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\xampp\htdocs\framework\yii\framework\db\CDbCommand.php(432): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 F:\xampp\htdocs\framework\yii\framework\db\ar\CActiveRecord.php(1546): CDbCommand->queryScalar()
+#2 F:\xampp\htdocs\framework\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 F:\xampp\htdocs\framework\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 F:\xampp\htdocs\framework\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 F:\xampp\htdocs\framework\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 F:\xampp\htdocs\framework\yii\framework\zii\widgets\CBaseListView.php(107): CDataProvider->getData()
+#7 F:\xampp\htdocs\framework\yii\framework\zii\widgets\grid\CGridView.php(314): CBaseListView->init()
+#8 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(147): CGridView->init()
+#9 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 F:\xampp\htdocs\booking\themes\ace_template\views\appointment\customer_filter.php(212): CBaseController->widget('zii.widgets.gri...', Array)
+#11 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(126): require('F:\xampp\htdocs...')
+#12 F:\xampp\htdocs\framework\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#13 F:\xampp\htdocs\framework\yii\framework\web\CController.php(869): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#14 F:\xampp\htdocs\framework\yii\framework\web\CController.php(782): CController->renderPartial('customer_filter', Array, true)
+#15 F:\xampp\htdocs\booking\protected\controllers\AppointmentController.php(158): CController->render('customer_filter', Array)
+#16 F:\xampp\htdocs\framework\yii\framework\web\actions\CInlineAction.php(49): AppointmentController->actionCost_range()
+#17 F:\xampp\htdocs\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 F:\xampp\htdocs\framework\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 F:\xampp\htdocs\framework\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 F:\xampp\htdocs\framework\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 F:\xampp\htdocs\framework\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 F:\xampp\htdocs\framework\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(282): CController->run('cost_range')
+#26 F:\xampp\htdocs\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('appointment/cos...')
+#27 F:\xampp\htdocs\framework\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 F:\xampp\htdocs\booking\index.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/booking/index.php?r=appointment/cost_range
+HTTP_REFERER=http://localhost/booking/index.php?r=appointment/customerFilter
+---

@@ -21,6 +21,7 @@ class StaffSecondContact extends CActiveRecord
 		return '{{staff_second_contact}}';
 	}
 
+	 
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -29,11 +30,11 @@ class StaffSecondContact extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('staff_id', 'required'),
+			array('', 'required'), //staff_id, name_second_contact, email_second_contact
 			array('staff_id', 'numerical', 'integerOnly'=>true),
 			array('name_second_contact, email_second_contact', 'length', 'max'=>100),
 			array('phone_second_contact', 'length', 'max'=>30),
-			array('email_second_contact, address_second_contact', 'safe'),
+			array('staff_id, email_second_contact, address_second_contact, phone_second_contact', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, staff_id, name_second_contact, phone_second_contact, email_second_contact, address_second_contact', 'safe', 'on'=>'search'),

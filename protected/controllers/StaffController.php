@@ -19,6 +19,7 @@ class StaffController extends Controller
         );
     }
 
+  
     public function beforeAction(CAction $action)
     {
         if(!isset(Yii::app()->user->id))
@@ -28,8 +29,8 @@ class StaffController extends Controller
 
         return true;
     }
-    /**
-     * Specifies the access control rules.
+   
+  /**    * Specifies the access control rules.
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
@@ -125,6 +126,7 @@ class StaffController extends Controller
                 $model->user_type = 7;
                 $model->status = 1;
                 
+                //
                 //Picture upload script
                 if (@!empty($_FILES['Staff']['name']['profile_picture'])) {
                     $model->profile_picture = $_POST['Staff']['profile_picture'];
@@ -135,21 +137,17 @@ class StaffController extends Controller
                     }
                     $model->profile_picture->saveAs($path . '/' . time() . '_' . str_replace(' ', '_', strtolower($model->profile_picture)));
                     $model->profile_picture = time() . '_' . str_replace(' ', '_', strtolower($model->profile_picture));
-                   
                     
-                    //$shop_id=Yii::app()->user->shop_id; //store owner's shop id is saving
                 }
                 //$model->save(false);
+                //New line comment added for testing Git Hub
+                //if (($model->save()) AND ($second_contact ->save()) ) {
+                if ($model->save()) {
 
-                if (($model->save()) AND ($second_contact->save()) ) {
- 
-                    $second_contact->saff_id = $model->id;
-                    //$second_contact->name_second_contact = $model->id;
-                    //$second_contact->phone_second_contact = $model->id;
-                    //$second_contact->email_second_contact = $model->id;
-                    //$second_contact->address_second_contact = $model->id;
-                    
+                     $second_contact->staff_id = $model->id;
+                     $second_contact->save(); 
 
+                    //$second_contact->save();
                     Yii::app()->user->setFlash('success', 'Staff has been registered.');
                     $this->redirect(array('staff/admin'));
 
@@ -233,22 +231,25 @@ class StaffController extends Controller
     public function actionUpdate($id)
     {
         $model=$this->loadModel($id);
-
+        $second_contact = StaffSecondContact::model()->findByAttributes(array('staff_id'=>$model->id));
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-
-        if(isset($_POST['Staff']))
+        if (isset($_POST['Staff'], $_POST['StaffSecondContact'] ))
+        //if(isset($_POST['Staff']))
         {
             $model->attributes=$_POST['Staff'];
-            if($model->save())
-                $this->redirect(array('view','id'=>$model->id));
-        }
+            $second_contact->attributes = $_POST['StaffSecondContact'];
 
-        $this->render('update',array(
-            'model'=>$model,
+            if($model->save())
+
+                 $second_contact->staff_id = $model->id;
+                 $second_contact->save(); 
+                $this->redirect(array('view','id'=>$model->id));
+        }      
+        $this->render('update', array(
+            'model'=>$model,'second_contact'=>$second_contact,
         ));
     }
-
     /**
      * Deletes a particular model.
      * If deletion is successful, the browser will be redirected to the 'admin' page.

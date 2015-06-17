@@ -1,13 +1,13 @@
 <?php
 
-class MassmailController extends BackEndController {
+class MassmailController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
     public $layout = '//layouts/column2';
-
+    /*
     protected function beforeAction($action) {
         $access = $this->checkAccess(Yii::app()->controller->id, Yii::app()->controller->action->id);
         if ($access == 1) {
@@ -17,6 +17,16 @@ class MassmailController extends BackEndController {
             $this->redirect(array('/site/noaccess'));
         }
     }
+    */
+    public function beforeAction(CAction $action)
+        {
+            if(!isset(Yii::app()->user->id))
+            {
+                $this->redirect(array('site/login'));
+            }
+
+            return true;
+        }
 
     /**
      * @return array action filters
@@ -40,7 +50,7 @@ class MassmailController extends BackEndController {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete', 'send'),
+                'actions' => array('create', 'update', 'admin', 'delete', 'send','mailSend','displayMessage'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -52,6 +62,67 @@ class MassmailController extends BackEndController {
             ),
         );
     }
+    
+    public function actionDisplayMessage(){ 
+        $q = $_POST['bcfield'];
+        $model=MassmailContent::model()->findAll();  
+        $sql = "SELECT message_body  FROM massmail_content WHERE id=". $q ;
+            $command = Yii::app()->db->createCommand($sql);
+            $result= $command->queryScalar(); 
+            echo "%".$result."%";
+            $this->performAjaxValidation($model);       
+    }
+
+    public function actionMailSend() {
+        
+            $customerList = Yii::app()->request->getParam('idList');
+            
+            $allCustomers = (is_array($customerList)) ? implode(",", $customerList) : $customerList;
+            //print $allCustomers;
+
+            //print $allCustomers ;
+
+            $model = new Massmail;
+
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+
+        if (isset($_POST['Massmail'])) {
+            $model->attributes = $_POST['Massmail'];
+
+
+            $model->users= $allCustomers; //getting allcustomer's emial address //// plan is to get user Id first then email address
+            
+            $mail_subject=MassmailContent::get_subject($model->mail_content_id);
+            $message_body=MassmailContent::get_message_body($model->mail_content_id);
+            
+            $model->send_by = Yii::app()->user->id;
+            $model->send_on = new CDbExpression('NOW()');
+            //$model->created_by = Yii::app()->user->id;
+            //$model->created_on = new CDbExpression('NOW()');
+
+            $to = Yii::app()->params['adminEmail'];
+            $bccList='';
+            $bccList = $allCustomers;
+            $subject = $mail_subject;
+            $message = $message_body;
+            //$fromName = Yii::app()->params['Companyname'];
+            $fromName = Shop::get_shop(Yii::app()->user->shop_id);
+            $fromMail = Shop::get_shop_email(Yii::app()->user->shop_id);
+           
+
+            if ($model->save()) {
+                Massmail::sendMail($to, $subject, $message, $fromName, $fromMail, $bccList);
+                Yii::app()->user->setFlash('success', 'Mail has been sent successfully!');
+                $this->redirect(array('view', 'id'=> $model->id,));
+
+            }
+        }
+        $this->render('mailSend', array(
+        'model' => $model,
+        ));  
+    }
+
 
     public function actionSend($id) {
         $model = $this->loadModel($id);

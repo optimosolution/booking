@@ -41,7 +41,7 @@ class MassmailContentController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin'),
+				'actions'=>array('create','update','admin','mail'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -53,6 +53,9 @@ class MassmailContentController extends Controller
 			),
 		);
 	}
+
+
+
 
 	/**
 	 * Displays a particular model.
@@ -80,6 +83,7 @@ class MassmailContentController extends Controller
 		{
 			$model->attributes=$_POST['MassmailContent'];
 			$model->entry_date = new CDbExpression('NOW()');
+			$model->shop_id= Yii::app()->user->shop_id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

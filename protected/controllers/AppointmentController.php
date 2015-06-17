@@ -60,8 +60,8 @@ class AppointmentController extends Controller
 
 	public function actionMail() {
         $customerList = Yii::app()->request->getParam('idList');
-        print $allCustomers = (is_array($customerList)) ? implode(",", $customerList) : $customerList;
-
+        $allCustomers = (is_array($customerList)) ? implode(",", $customerList) : $customerList;
+        print $allCustomers ;
         
     }
 	/**

@@ -16,6 +16,9 @@
  * @property string $modified_on
  * @property integer $customer_id
  * @property string $send_on
+ * @property string $reference_mail
+ * @property string $replied_customer
+ * @property string $mail_status
  */
 class MailCustomer extends CActiveRecord
 {

@@ -205,6 +205,16 @@ class Shop extends CActiveRecord {
             return $value->title;
         }
     }
+
+    public static function get_shop_email($id) {
+
+        $value = Shop::model()->findByAttributes(array('id' => $id));
+        if (empty($value->email)) {
+            return null;
+        } else {
+            return $value->email;
+        }
+    }
     
     //get shop picture
     public static function get_shop_picture($id) {

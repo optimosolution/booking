@@ -56,6 +56,14 @@
     </script>
 
 
+    <div class="form-group marginBot10px" style="display:none;">
+		<?php echo $form->labelEx($model,'attached_file', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
+		<div class="col-sm-9">
+		<?php echo $form->fileField($model,'attached_file',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'attached_file'); ?>	
+		</div>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

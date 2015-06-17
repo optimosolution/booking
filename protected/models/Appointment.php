@@ -27,6 +27,7 @@ class Appointment extends CActiveRecord {
 
     public $email;
     public $total_amount;
+    
     public $appointment_count; //how many times a customer take appointments from a shop
     public $number_of_visit;
     public $from_date;
@@ -107,13 +108,6 @@ class Appointment extends CActiveRecord {
         }
 
 
-        $criteria->group = ('customer_id');
-        $criteria->order = 'total_amount DESC';
-        $criteria->addCondition('appoint_date <= DATE(NOW())');
-        $criteria->select = array(
-            '*' => new CDbExpression('customer_id, shop_id, SUM(total_cost) AS total_amount, COUNT(customer_id) AS number_of_visit'),
-        );
-
 
         if (!empty($this->cost_range_from) && empty($this->cost_range_to)) {
             $criteria->condition = "total_amount >= '$this->cost_range_from'";  // date is database date column field
@@ -124,6 +118,13 @@ class Appointment extends CActiveRecord {
         }
 
         
+        $criteria->group = ('customer_id');
+        $criteria->order = 'total_amount DESC';
+        $criteria->addCondition('appoint_date <= DATE(NOW())');
+        $criteria->select = array(
+            '*' => new CDbExpression('customer_id, shop_id, SUM(total_cost) AS total_amount, COUNT(customer_id) AS number_of_visit'),
+        );
+
         //$criteria->condition='your_condition';
         //$user = User::model()->find($criteria);
         $criteria->limit = 100;

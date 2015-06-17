@@ -55,14 +55,15 @@ class MailCustomerController extends Controller
 		);
 	}
 
-	
+ 
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+			Yii::app()->db->createCommand('UPDATE {{mail_customer}} SET `mail_status` = 2 WHERE id=' . $id . ' LIMIT 1')->execute();		
+			$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}

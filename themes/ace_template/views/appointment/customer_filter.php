@@ -129,7 +129,7 @@ $('.search-form form').submit(function(){
 
 <?php
 $form = $this->beginWidget('CActiveForm', array(
-    'enableAjaxValidation' => true, 'action' => Yii::app()->createUrl('appointment/mail'),
+    'enableAjaxValidation' => true, 'action' => Yii::app()->createUrl('massmail/mailSend'),
         ));
 
 
@@ -148,10 +148,19 @@ $this->widget('zii.widgets.grid.CGridView', array(
         array(
             'class' => 'CCheckBoxColumn',
             'selectableRows' => '2',
+            'value' => 'User::get_user_email($data->customer_id)',
+            'checkBoxHtmlOptions' => array("name" => "idList[]"),
+            'selectableRows' => '50',
+        ),
+        /*
+            array(
+            'class' => 'CCheckBoxColumn',
+            'selectableRows' => '2',
             'value' => '$data["customer_id"]',
             'checkBoxHtmlOptions' => array("name" => "idList[]"),
             'selectableRows' => '50',
         ),
+        */
         array(//this array is for automatic serial 
             'header' => 'Sl.',
             'value' => '$this->grid->dataProvider->pagination->offset + $row+1', //  row is zero based
@@ -163,11 +172,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'filter' => CHtml::activeDropDownList($model, 'customer_id', CHtml::listData(User::model()->findAll(array('condition' => 'group_id=8 AND company=' . Yii::app()->user->company . ' AND shop_id=' . Yii::app()->user->shop_id, "order" => "name")), 'id', 'name'), array('empty' => 'All')),
             'htmlOptions' => array('style' => "text-align:left; width:250px;"),
         ),
-        /* array(
+         array(
           'name' => 'email', //want to use the label as email
           'value' => 'User::get_user_email($data->customer_id)',
           'htmlOptions' => array('style' => "text-align:left; width:200px;"),
-          ), */
+          ), /**/
         array(
             'name' => 'shop_id',
             'value' => 'Shop::get_shop($data->shop_id)',

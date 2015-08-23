@@ -2,6 +2,11 @@
 /* @var $this MassmailController */
 /* @var $model Massmail */
 /* @var $form TbActiveForm */
+
+$customerList = Yii::app()->request->getParam('idList');            
+$allCustomers = (is_array($customerList)) ? implode(",", $customerList) : $customerList;
+
+//print $allCustomers;
 ?>
 
 <div class="form">
@@ -21,17 +26,28 @@
  ?>
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
     <?php  echo $form->errorSummary($model); ?>
-    <br/> <br/>
+    <br/> <br/> 
+    <?php echo $form->textField($model,'users', array('size'=>60,'maxlength'=>450, 'class' =>'col-xs-10 col-sm-5', 'value'=>$allCustomers, "style"=>"display:none;")); //'disabled'=>'disabled', ?> 
+    <?php /*
+    <div class="form-group marginBot10px">
+        <?php //echo $form->labelEx($model,'Customers email address', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
+        <div class="col-sm-9">
+         <?php echo $form->textField($model,'user_quantity', array('size'=>60,'maxlength'=>450, 'class' =>'col-xs-10 col-sm-5', 'value'=>$allCustomers, "style"=>"display:none;")); //'disabled'=>'disabled', ?> 
+         
+        <?php //echo $form->error($model,'users'); ?>       
+        </div>
+    </div>
+    */ ?>
     <div class="form-group marginBot10px">
         <?php echo $form->labelEx($model,'Select Email Subject', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
         <div class="col-sm-9">
-        <?php echo $form->dropDownList($model, 'mail_content_id', CHtml::listData(MassMailContent::model()->findAll(array('condition' => 'status=1 AND shop_id='.Yii::app()->user->shop_id, "order" => "subject")), 'id', 'subject'), array('empty' => '--please select--', 'class' => 'span12 input-large', 'options' => array(), 'label' => false)); ?>
+        <?php echo $form->dropDownList($model, 'mail_content_id', CHtml::listData(MassmailContent::model()->findAll(array('condition' => 'status=1 AND shop_id='.Yii::app()->user->shop_id, "order" => "subject")), 'id', 'subject'), array('empty' => '--please select--', 'class' => 'span12 input-large', 'options' => array(), 'label' => false)); ?>
        
         <?php echo $form->error($model,'mail_content_id'); ?>       
         </div>
     </div>
 
-    <div class="form-group marginBot10px">
+    <div class="form-group marginBot10px" style="display:none;">
      <?php echo $form->labelEx($model, 'message_body', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
      <div class="col-sm-9">
     <?php

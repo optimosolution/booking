@@ -129,6 +129,7 @@ $('.search-form form').submit(function(){
 
 <?php
 $form = $this->beginWidget('CActiveForm', array(
+    //'enableAjaxValidation' => true, 'action' => Yii::app()->createUrl('appointment/mail'),
     'enableAjaxValidation' => true, 'action' => Yii::app()->createUrl('massmail/mailSend'),
         ));
 
@@ -180,10 +181,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
         array(
             'name' => 'shop_id',
             'value' => 'Shop::get_shop($data->shop_id)',
-            //'filter' => CHtml::activeDropDownList($model, 'shop_id', CHtml::listData(Shop::model()->findAll(array('condition' => 'company=' . Yii::app()->user->company, "order" => "title")), 'id', 'title'), array('empty' => 'All')),
             'htmlOptions' => array('style' => "text-align:left; width:150px;"),
         ),
-        //'appoint_date',
         array(
             'name' => 'appointment_count',
             'value' => '$data->number_of_visit',
@@ -191,7 +190,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
         ),
         array(
             'name' => 'total_amount',
-            //'value' => '$data->total_amount'.'Currency::get_currency_short_code($data->shop_id)',
             'value' => '$data->total_amount',
             'htmlOptions' => array('style' => "text-align:center; width:100px; font-weight:bold;"),
         ),
@@ -204,7 +202,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 'view' => array(
                     'label' => '',
                     'imageUrl' => '',
-                   'url' => 'Yii::app()->createUrl("/appointment/filterListView", array("customer_id"=>$data["customer_id"]))',
+                    'url' => 'Yii::app()->createUrl("/appointment/filterListView", array("customer_id"=>$data["customer_id"]))',
                     'options' => array('class' => 'btn btn-xs btn-info fa fa-eye'),
                 ),
                 'update' => array(

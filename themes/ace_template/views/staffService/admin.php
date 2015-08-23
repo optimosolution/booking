@@ -50,6 +50,9 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'staff-service-grid',
 	'dataProvider'=>$model->search(),
+	'htmlOptions'=>array('style'=>'cursor: pointer;'),
+	'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('staffService/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
 	'filter'=>$model,
 	'columns'=>array(
 		array(

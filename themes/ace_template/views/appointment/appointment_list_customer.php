@@ -38,7 +38,9 @@ $company_id=Yii::app()->user->company; */
 		$this->widget('zii.widgets.grid.CGridView', array(
 		'id'=>'appointment-grid',
 		'dataProvider'=>$model->search(array('condition'=>'status=1 AND customer_id='.$user_id)),
-		//'dataProvider'=>$model->search_appointment(),
+		'htmlOptions'=>array('style'=>'cursor: pointer;'),
+		'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('appointment/detailViewCustomer', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
 		'filter'=>$model,
 		'columns'=>array(
 			array(

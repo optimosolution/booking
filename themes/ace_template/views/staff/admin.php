@@ -47,6 +47,9 @@ $('.search-form form').submit(function(){
 	'id'=>'staff-grid',
 	//'dataProvider'=>$model->search(),
 	'dataProvider'=>$model->search(array('condition'=>'company='.$company_id.' AND group_id='.$_GET['group_id'] )),
+	'htmlOptions'=>array('style'=>'cursor: pointer;'),
+	'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('staff/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+	
 	'filter'=>$model,
 	'columns'=>array(
 		array(

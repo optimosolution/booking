@@ -45,6 +45,9 @@ $shop_id=Yii::app()->user->shop_id;
 	'id'=>'customer-grid',
 	//'dataProvider'=>$model->search(),
 	'dataProvider'=>$model->search(array('condition'=>'company='.$company_id.' AND group_id=8')),
+	'htmlOptions'=>array('style'=>'cursor: pointer;'),
+	'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('customer/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
 	'filter'=>$model,
 	'columns'=>array(
 		array(

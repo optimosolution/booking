@@ -68,7 +68,7 @@
 <div class="form-group marginBot10px">
 	<?php echo $form->labelEx($model,'message_body', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
 	<div class="col-sm-9">
-	<?php echo $form->textArea($model,'message_body',array('rows'=>6, 'cols'=>50,'class' =>'col-xs-10 col-sm-5', 'placeholder'=>'Subject')); ?>
+	<?php echo $form->textArea($model,'message_body',array('rows'=>6, 'cols'=>50,'class' =>'col-xs-10 col-sm-5', 'placeholder'=>'Message')); ?>
 	<?php echo $form->error($model,'message_body'); ?>		
 	</div>
 </div>

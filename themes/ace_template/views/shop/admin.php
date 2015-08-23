@@ -35,6 +35,9 @@ $('.search-form form').submit(function(){
         $this->widget('zii.widgets.grid.CGridView', array(
             'id' => 'shop-grid',
             'dataProvider' => $model->search(),
+            'htmlOptions'=>array('style'=>'cursor: pointer;'),
+            'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('shop/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
             'filter' => $model,
             'columns' => array(
                 array(

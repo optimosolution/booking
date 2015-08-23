@@ -15,9 +15,10 @@ $this->menu=array(
 	array('label'=>'Manage MassmailContent', 'url'=>array('admin')),
 );
 ?>
-
-<h1>View MassmailContent #<?php echo $model->id; ?></h1>
-
+<div>
+<h1 style="width:70%; float:left;">View MassmailContent #<?php echo $model->id; ?></h1>
+<?php echo CHtml::link('<i class="icon-edit"></i> Edit', array('update', 'id' => $model->id), array('class' => 'btn btn-info btn-mini', 'style'=>'width:10%; float:right; margin:10px 10px 00;')); ?>
+</div>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(

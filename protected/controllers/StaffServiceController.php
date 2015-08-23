@@ -109,7 +109,7 @@ class StaffServiceController extends Controller
 		{
 			$model->attributes=$_POST['StaffService'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

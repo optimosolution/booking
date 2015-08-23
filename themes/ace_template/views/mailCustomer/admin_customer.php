@@ -45,8 +45,11 @@ $company_id=Yii::app()->user->company;
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'mail-customer-grid',
-	'dataProvider'=>$model->search(array('condition'=>'customer_id='.$user_id.' AND mail_status=1')),
+	'dataProvider'=>$model->search(array('condition'=>'customer_id='.$user_id)),//.' AND mail_status=1'
 	//'dataProvider'=>$model->search(),
+ 	'htmlOptions'=>array('style'=>'cursor: pointer;'),
+	'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('MailCustomer/view_customer', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
 	'filter'=>$model,
 	'columns'=>array(
 		array(

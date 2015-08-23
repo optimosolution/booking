@@ -787,10 +787,7 @@ $group_id=Yii::app()->user->group_id;
 								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Customers/Registered Members') . '</span>', array('Customer/adminsw')); ?>
 								<b class="arrow"></b>
 							</li>
-							<li class="">
-								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Top Paid Customers') . '</span>', array('Customer/topPaid')); ?>
-								<b class="arrow"></b>
-							</li>
+							 
 							<li class="">
 								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'New Customer') . '</span>', array('/Customer/create')); ?>
 								<b class="arrow"></b>
@@ -872,11 +869,13 @@ $group_id=Yii::app()->user->group_id;
 
 								<b class="arrow"></b>
 							</li>
+							<?php /*
  							<li class="">
 								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Message to Selected Customers') . '</span>', array('mailAdmin/create')); ?>
 
 								<b class="arrow"></b>
 							</li>
+							*/ ?>
 						</ul>
 					</li>
 					<li class="">
@@ -891,17 +890,22 @@ $group_id=Yii::app()->user->group_id;
 
 						<ul class="submenu">
 							<li class="">
-								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Massmail Contents') . '</span>', array('massmailContent/admin')); ?>
+								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Default Email Templates') . '</span>', array('massmailContentDefault/index')); ?>
 
 								<b class="arrow"></b>
 							</li>
  							<li class="">
+								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Massmail Contents') . '</span>', array('massmailContent/admin')); ?>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
 								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Create New Massmail') . '</span>', array('massmailContent/create')); ?>
 
 								<b class="arrow"></b>
 							</li>
 							<li class="">
-								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Message to Selected Customers') . '</span>', array('mailAdmin/create')); ?>
+								<?php echo CHtml::link('<i class="menu-icon fa fa-caret-right"> </i> <span class="menu-text" >' . Yii::t('Common', 'Message to Selected Customers') . '</span>', array('appointment/customerFilter')); ?>
 
 								<b class="arrow"></b>
 							</li>

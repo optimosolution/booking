@@ -2,6 +2,7 @@
 /* @var $this MassmailContentController */
 /* @var $data MassmailContent */
 ?>
+            <?php echo CHtml::link('<i class="icon-pencil"></i>', array('update', 'id' => $model->id), array('data-rel' => 'tooltip', 'title' => 'Edit', 'data-placement' => 'bottom')); ?>
 
 <div class="view">
 
@@ -14,9 +15,9 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('massmail_body')); ?>:</b>
-	<?php echo CHtml::encode($data->massmail_body); ?>
+	<?php echo htmlspecialchars_decode(CHtml::encode($data->massmail_body)); ?>
 	<br />
-
+<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('entry_date')); ?>:</b>
 	<?php echo CHtml::encode($data->entry_date); ?>
 	<br />
@@ -25,5 +26,5 @@
 	<?php echo CHtml::encode($data->update_date); ?>
 	<br />
 
-
+*/ ?>
 </div>

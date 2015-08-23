@@ -45,18 +45,13 @@ $company_id=Yii::app()->user->company;
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'mail-customer-grid',
-	'dataProvider'=>$model->search(array('condition'=>'store_owner='.$user_id.' AND mail_status=1')),
-	//'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'dataProvider'=>$model->search(array('condition'=>'store_owner='.$user_id)),//'.'AND mail_status=1'
+ 	'htmlOptions'=>array('style'=>'cursor: pointer;'),
+	'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('MailCustomer/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
+ 	'filter'=>$model,
 	'columns'=>array(
-		/*
-			array(
-                    'name' => 'id',
-                    'type' => 'raw',
-                    'value' => '$data->id',
-                     'htmlOptions' => array('style' => "text-align:center; width:50px !important;", 'title' => 'ID'),
-                ),
-		*/
+		
 		 array(
                 'name' => 'customer_id',
                 'type' => 'raw',
@@ -64,13 +59,7 @@ $company_id=Yii::app()->user->company;
                 'filter' => CHtml::activeDropDownList($model, 'customer_id', CHtml::listData(User::model()->findAll(array("order" => "name")), 'id', 'name'), array('empty' => 'All')),
                 'htmlOptions' => array('style' => "text-align:left;", 'title' => 'Sent By'),
                 ),
-		/*  array(
-                'name' => 'store_owner',
-                'type' => 'raw',
-                'value' => 'User::get_user_name($data->store_owner)', //This part is Not working
-                'filter' => CHtml::activeDropDownList($model, 'store_owner', CHtml::listData(User::model()->findAll(array("order" => "name")), 'id', 'name'), array('empty' => 'All')),
-                'htmlOptions' => array('style' => "text-align:left;", 'title' => 'Sent By'),
-                ), */
+		
   		 array(
                 'name' => 'send_on',
                 'type' => 'raw',
@@ -81,7 +70,21 @@ $company_id=Yii::app()->user->company;
 			
 		'subject',
 		'message_body',
-		 	
+		 /*  array(
+                'name' => 'store_owner',
+                'type' => 'raw',
+                'value' => 'User::get_user_name($data->store_owner)', //This part is Not working
+                'filter' => CHtml::activeDropDownList($model, 'store_owner', CHtml::listData(User::model()->findAll(array("order" => "name")), 'id', 'name'), array('empty' => 'All')),
+                'htmlOptions' => array('style' => "text-align:left;", 'title' => 'Sent By'),
+                ), */
+                /*
+			array(
+                    'name' => 'id',
+                    'type' => 'raw',
+                    'value' => '$data->id',
+                     'htmlOptions' => array('style' => "text-align:center; width:50px !important;", 'title' => 'ID'),
+                ),
+		*/	
 		/*
 		'store_owner',	'created_by',
 		'created_on',

@@ -120,6 +120,8 @@ class MailCustomerController extends Controller
 			$storeowner_name= User::get_user_name($storeowner);
 			$model->store_owner=$storeowner;
 			$model->mail_status=1; //1 = unread email, 2= read emial
+ 			$model->created_by=Yii::app()->user->id;
+			$model->created_on = new CDbExpression('NOW()');
 			
 			if($model->save()){
 				//Send mail to user
@@ -184,11 +186,12 @@ class MailCustomerController extends Controller
 			$subject= MailCustomer::get_subject($reference_mail);
 
 			$model->subject='RE: '.$subject;
+ 			$model->store_owner=Yii::app()->user->id;
 
-			$model->store_owner=Yii::app()->user->id;
+ 			$model->mail_status=1; //1 = unread email, 2= read emial
+			$model->created_by=Yii::app()->user->id;
+			$model->created_on = new CDbExpression('NOW()');
 
- 			$model->mail_status=1;
-			
 			if($model->save()){
 				//Send mail to user
                     $message = "Hellow Mr. " .$reply_to_name. ", <br /><br />";

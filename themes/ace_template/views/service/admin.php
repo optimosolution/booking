@@ -35,6 +35,9 @@ $('.search-form form').submit(function(){
         $this->widget('zii.widgets.grid.CGridView', array(
             'id' => 'service-grid',
             'dataProvider' => $model->search(),
+            'htmlOptions'=>array('style'=>'cursor: pointer;'),
+            'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('service/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
             //'dataProvider'=>$model->search(array('condition'=>'company='.Yii::app()->user->company.' AND shop='.Yii::app()->user->shop_id)),
             'filter' => $model,
             'columns' => array(

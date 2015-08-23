@@ -37,34 +37,37 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+	$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'massmail-content-grid',
 	'dataProvider'=>$model->search(),
+	'htmlOptions'=>array('style'=>'cursor: pointer;'),
+	'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('massmailContent/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
 	'filter'=>$model,
 	'columns'=>array(
+
 		array(
                 'header'=>'Sl.',
                 'value'=>'$this->grid->dataProvider->pagination->offset + $row+1',       //  row is zero based
                 'htmlOptions' => array('style' => "text-align:center; width:50px !important;", 'title' => 'ID'),
         ),
-	/*	'id', */
-		//'subject',
-		array(
-	                'name' => 'subject',
-	                'value' => '$data->subject',
-	                'htmlOptions' => array('style' => "text-align:left; width:350px;"),
-        ),
-		array(
-	                'name' => 'subject',
-	                'value' => '$data->massmail_body',
-	                'type' => 'html',
-	                'htmlOptions' => array('style' => "text-align:left; width:350px;"),
-        ),
-		 
+  		array(
+	                'name'  => 'subject',
+	                'value' => 'CHtml::link($data->subject, Yii::app()
+	                 ->createUrl("massmailContent/view/",array("id"=>$data->primaryKey)))',
+	                 'type'  => 'raw',
+                	'htmlOptions' => array('style' => "text-align:left; width:450px !important;", 'title' => 'subject'),
+	             ),
+	 
+	 	
 		'entry_date',
 		'update_date',
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+
+
+)); 
+ 
+?>

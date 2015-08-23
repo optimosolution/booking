@@ -7,8 +7,6 @@ class AppointmentController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
-
 	/**
 	 * @return array action filters
 	 */
@@ -43,7 +41,7 @@ class AppointmentController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','calender','admin','customerFilter','adminCustomer','filterCustomer','dateRangeSelect','Cost_range','checkAppointments','getService_id_fromAJAX','detailViewCustomer','mail','filterListView'),
+				'actions'=>array('index','view','create','update','calender','admin','customerFilter','adminCustomer','filterCustomer','dateRangeSelect','Cost_range','checkAppointments','getService_id_fromAJAX','detailViewCustomer','mail','filterListView','appointmentStatusCheck','actionAppointmentStatusCheck'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -55,8 +53,6 @@ class AppointmentController extends Controller
 			),
 		);
 	}
-
-
 
 	public function actionMail() {
         $customerList = Yii::app()->request->getParam('idList');
@@ -95,10 +91,22 @@ class AppointmentController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	// gettign a variable from AJAX from the appointment form to find the Service cost
-	public function actionGetService_id_fromAJAX()
+	public function actionGetService_id_fromAJAX($id)
 	{
 		$service_id=$_GET['getService_id_fromAJAX'];
 	}
+	/*
+	public function actionAppointmentStatusCheck($id, $status)
+	{
+ 		echo $id."</br>";
+		echo $status."</br>";
+	} */
+	public function actionAppointmentStatusCheck($id)
+	 {
+	  $model = Appointment::model()->findByPk($id);
+	  
+	  print $model->status;   
+	 }
 
 	public function actionCreate()
 	{
@@ -118,16 +126,14 @@ class AppointmentController extends Controller
 			$model->customer_id=Yii::app()->user->id;
 			$model->total_cost= Service::get_service_cost($model->service_id);
 			//$model->staff_id= 1027;
-			$model->status=1;
+			$model->status=0;
 			if ($model->save()) {
-
 				$model_history->appointment_id = $model->id;
 				$model_history->shop_id = $model->shop_id;
 				$model_history->customer_id = $model->customer_id;
 				$model_history->appoint_date = $model->appoint_time;
 				$model_history->service_id = $model->service_id;
 				$model_history->save();
-
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -191,7 +197,9 @@ public function actionCost_range()
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Appointment'])) {
+
 			$model->attributes=$_POST['Appointment'];
+			$model->change_date= new CDbExpression('NOW()');
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}

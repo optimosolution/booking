@@ -2,7 +2,6 @@
 /* @var $this AppointmentController */
 /* @var $model Appointment */
 
-
 $this->breadcrumbs=array(
 	'Appointments'=>array('index'),
 	'Manage',
@@ -34,6 +33,13 @@ $('.search-form form').submit(function(){
 		$this->widget('zii.widgets.grid.CGridView', array(
 		'id'=>'appointment-grid',
 		'dataProvider'=>$model->search_appointment(),
+	 	'htmlOptions'=>array('style'=>'cursor: pointer;'),
+		'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('appointment/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
+		'rowCssClassExpression' => '
+        ( $row%2 ? $this->rowCssClass[1] : $this->rowCssClass[0] ) .
+        ( $data->status ? null : " orangeBG" )
+    ',
 		'filter'=>$model,
 		'columns'=>array(
 			array(
@@ -45,7 +51,7 @@ $('.search-form form').submit(function(){
 	                'name' => 'customer_id',
 	                'value' => 'User::get_user_name($data->customer_id)',
 	                'filter' => CHtml::activeDropDownList($model, 'customer_id', CHtml::listData(User::model()->findAll(array('condition' => 'group_id=8 AND company=' . Yii::app()->user->company.' AND shop_id=' . Yii::app()->user->shop_id, "order" => "name")), 'id', 'name'), array('empty' => 'All')),
-	                'htmlOptions' => array('style' => "text-align:left; width:150px;"),
+	                'htmlOptions' => array('style' => "text-align:left; width:150px;text-transform:capitalize;"),
 	            ),
 			array(
 	                'name' => 'shop_id',
@@ -57,30 +63,46 @@ $('.search-form form').submit(function(){
 	                'name' => 'staff_id',
 	                'value' => 'User::get_user_name($data->staff_id)',
 	                'filter' => CHtml::activeDropDownList($model, 'staff_id', CHtml::listData(User::model()->findAll(array('condition' => 'group_id=7 AND company=' . Yii::app()->user->company.' AND shop_id=' . Yii::app()->user->shop_id, "order" => "name")), 'id', 'name'), array('empty' => 'All')),
-	                'htmlOptions' => array('style' => "text-align:left; width:150px;"),
+	                'htmlOptions' => array('style' => "text-align:left; width:150px;text-transform:capitalize;"),
 	            ),
 	 		array(
 	                'name' => 'service_id',
 	                'value' => 'Service::get_service_name($data->service_id)',
 	                 'filter' => CHtml::activeDropDownList($model, 'service_id', CHtml::listData(Service::model()->findAll(array('condition' => 'company=' . Yii::app()->user->company.' AND shop=' . Yii::app()->user->shop_id, "order" => "title")), 'id', 'title'), array('empty' => 'All')),
 	                'htmlOptions' => array('style' => "text-align:left; width:150px;"),
-	            ),
+	            ), 
 			'appoint_date',
 			'appoint_time',
-			'total_cost',
+			//'total_cost',
 			array(
+	                'name' => 'total_cost',
+	                'type' => 'raw',
+	                //'value' => '$data->total_cost',
+	                'value'=>'Appointment::getIdentifyCyrency($data->shop_id).\'\'.$data->total_cost',//.\' \'.$data->status
+	                'htmlOptions' => array('style' => "text-align:left; width:100px;"),
+	            ),
+			/* array(
                     'name' => 'status',
-                    'value' => '$data->status?Yii::t(\'app\',\'Active\'):Yii::t(\'app\', \'Inactive\')',
-                    'filter' => array('' => Yii::t('app', 'All'), '0' => Yii::t('app', 'Inactive'), '1' => Yii::t('app', 'Active')),
+                    'value' => '$data->status?Yii::t(\'app\',\'Upcoming\')Yii::t(\'app\',\'Completed\'):Yii::t(\'app\', \'Inactive\')',
+                    'filter' => array('' => Yii::t('app', 'All'), '0' => Yii::t('app', 'Upcoming'), '1' => Yii::t('app', 'Completed'),  '2' => Yii::t('app', 'Incomplete')),
                     'htmlOptions' => array('style' => "text-align:center;"),
                 ),
+			*/
+			
+			array(
+	                'header' => 'Action & status',
+	                'type' => 'raw',
+	                'value' => 'Appointment::buttonColor($data->status, $data->id,  $data->appoint_date, $data->appoint_time)',	                
+	                'htmlOptions' => array('style' => "margin:0 auto; text-align:center;"),
+	            ),
 			/*'id','company_id','end_time',
 			'service_category',
 			'note',
 			*/
 			array(
-				'class'=>'CButtonColumn',
-			),
+            'class'=>'CButtonColumn',
+            'header' => Yii::t( 'app', 'Tools' ),
+        ),
 		),
 	)); 
  

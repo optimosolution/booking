@@ -25,3 +25,5 @@
 .marginTop10px{margin-top: 10px;}
 .errorSummary, .help-block, .errorMessage{color:#d15b47;}
 #user-form{width:40%;}
+.green{background: #00FF00 !important; font-weight: bold !important; color:#FFF !important; font-size: 15px;}
+.orangeBG{background: #FFA500 !important; font-weight: bold !important; color:#FFF !important; font-size: 15px;}

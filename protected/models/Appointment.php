@@ -44,7 +44,7 @@ class Appointment extends CActiveRecord {
         return array(
             array('appoint_date, appoint_time, service_category , service_id, customer_id', 'required'),
             array('company_id, shop_id, customer_id, staff_id, service_category, service_id, total_cost', 'numerical', 'integerOnly' => true),
-            array('end_time,appoint_time,applied_date,appointment_count, note, email,date_first,date_last,from_date, to_date,cost_range_from,cost_range_to', 'safe'),
+            array('end_time,appoint_time,applied_date,appointment_count, note, email,date_first,date_last,from_date, to_date,cost_range_from,cost_range_to, change_date', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('id, company_id,applied_date,appointment_count,appoint_date, from_date, to_date, date_first,date_last,email, shop_id, customer_id, staff_id, service_category, service_id, appoint_time, end_time, total_cost, note, status', 'safe', 'on' => 'search'),
@@ -75,7 +75,8 @@ class Appointment extends CActiveRecord {
             'service_id' => 'Service',
             'applied_date,' => 'Applied Date for Booking',
             'appoint_date' => 'Appointment Date',
-            'appoint_time' => 'Appoint Time',
+             'change_date' => 'Change Date',
+             'appoint_time' => 'Appoint Time',
             'end_time' => 'Ent Time',
             'total_cost' => 'Total Cost',
             'note' => 'Note',
@@ -309,5 +310,29 @@ class Appointment extends CActiveRecord {
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
+    
 
+    public static function buttonColor($val,$appointmentid, $appmnt_date, $appmnt_time) {  
+        $today= date("Y-m-d");//new CDbExpression('NOW()');//"YYYY-MM-DD HH:MM:SS"
+        $current_time= date("H:m:s");
+        if ($val==0 && $appmnt_date>=$today) {   
+            return '<p style="font-weight:bold !important; color: #1c9f1c!important; margin:0;">UPCOMING</p>';
+            //.' '.CHtml::link(' Cancel', array('appointment/appointmentStatusCheck','id'=>$appointmentid, 'status'=>'3'), array('class'=>'btn btn-danger btn-xs glyphicon glyphicon-remove', 'style'=>'background:#FF0000 !important; border:#c72424 !important; color:#FFF;  '))
+        } elseif($val==0 && $appmnt_date<=$today && $current_time>$appmnt_time){//
+           return CHtml::link(' Done',array('appointment/appointmentStatusCheck','id'=>$appointmentid, 'status'=>'1'), array('class'=>'btn btn-success btn-xs fa fa-check')).' '.CHtml::link(' Incomplete',array('appointment/appointmentStatusCheck','id'=>$appointmentid, 'status'=>'2'), array('class'=>'btn btn-danger btn-xs glyphicon glyphicon-remove'));
+        } elseif($val==2){
+            return '<p style="font-weight:bold !important; color: #FF0000!important;">Incomplete</p>';
+        }elseif($val==1){
+            return '<p style="font-weight:bold !important; color: #008000!important;">Completed</p>';
+        }//
+    }
+
+   
+
+     public static function getIdentifyCyrency($shop_id) {  
+        //$shop_id=Yii::app()->user->shop_id;
+        $currency_sym=Currency::get_currency_symbol(Shop::get_currency_id($shop_id));
+        return $currency_sym;
+        
+    }
 }

@@ -41,7 +41,7 @@ class MailCustomer extends CActiveRecord
 			array('store_owner, subject, message_body', 'required'),
 			array('store_owner, user_status, created_by, modified_by, customer_id', 'numerical', 'integerOnly'=>true),
 			array('subject', 'length', 'max'=>250),
-			array('modified_on,attached_file, send_on, reference_mail', 'safe'),
+			array('modified_on,attached_file, send_on, reference_mail, created_by', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, store_owner,attached_file, user_status, subject, message_body, created_by, created_on, modified_by, modified_on, customer_id, send_on', 'safe', 'on'=>'search'),

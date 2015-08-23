@@ -38,23 +38,22 @@
         <?php echo $form->labelEx($model,'Select Email Subject', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
         <div class="col-sm-9">
 
-        <?php echo $form->dropDownList($model, 'mail_content_id', CHtml::listData(MassMailContent::model()->findAll(array('condition' => 'status=1 AND shop_id='.Yii::app()->user->shop_id, "order" => "subject")), 'id', 'subject'), array(
+        <?php /* echo $form->dropDownList($model, 'mail_content_id', CHtml::listData(MassMailContent::model()->findAll(array('condition' => 'status=1 AND shop_id='.Yii::app()->user->shop_id, "order" => "subject")), 'id', 'subject'), array(
         'empty' => '--please select--', 
         'id' => 'send_bcfield',
         'class' => 'span12 input-large',
         
         'onchange' => "$('question_editor').val($('#send_bcfield option:selected').text())",
         'label' => false,
-        )); ?>
+        )); */ ?>
        
         <?php echo $form->error($model,'mail_content_id'); ?>       
         </div>
     </div>
 
-    <?php  
-        echo $form->errorSummary($model); ?>
      <?php echo $form->labelEx($model, 'message_body'); ?>
      <?php echo $form->textArea($model, 'message_body', array('id'=>'question_editor','maxlength'=>508, )); ?>
+    <?php   echo $form->errorSummary($model); ?>
 
     <?php /*
         $this->widget('application.extensions.yii-ckeditor.CKEditorWidget', array(

@@ -35,7 +35,7 @@ $shop_id=Yii::app()->user->shop_id;
 	<div class="form-group marginBot10px">
 	    <?php echo $form->labelEx($model,'user_id', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
 	    <div class="col-sm-9">
-	        <?php echo $form->dropDownList($model, 'user_id', CHtml::listData(Staff::model()->findAll(array('condition' => 'shop_id='.$shop_id, "order" => "name")), 'id', 'name'), array('empty' => '--please select--', 'class' => 'span5')); ?>
+	        <?php echo $form->dropDownList($model, 'user_id', CHtml::listData(Staff::model()->findAll(array('condition' => 'shop_id='.$shop_id.' AND group_id=7 ', "order" => "name")), 'id', 'name'), array('empty' => '--please select--', 'class' => 'span5')); ?>
 	        <?php echo $form->error($model,'user_id'); ?>       
 	    </div>
 	</div>

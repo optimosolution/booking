@@ -27,6 +27,9 @@ $this->breadcrumbs = array(
             <?php $this->widget('zii.widgets.grid.CGridView', array(
                 'id'=>'massmail-grid',
                 'dataProvider' => $model->search(),
+                'htmlOptions'=>array('style'=>'cursor: pointer;'),
+                'selectionChanged'=>"function(id){window.location='" . Yii::app()->urlManager->createUrl('massmail/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);}",
+
                 'filter' => $model,
                 'columns' => array(
                      array(

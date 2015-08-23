@@ -41,7 +41,7 @@ class MassmailContentController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','mail'),
+				'actions'=>array('create','update','admin','mail','templateUpdate','useTemplate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -84,6 +84,7 @@ class MassmailContentController extends Controller
 			$model->attributes=$_POST['MassmailContent'];
 			$model->entry_date = new CDbExpression('NOW()');
 			$model->shop_id= Yii::app()->user->shop_id;
+			$model->status=1;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -108,6 +109,7 @@ class MassmailContentController extends Controller
 		if(isset($_POST['MassmailContent']))
 		{
 			$model->attributes=$_POST['MassmailContent'];
+			$model->update_date = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -131,6 +133,59 @@ class MassmailContentController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+	public function actionUseTemplate($id)
+	{	
+
+
+
+		$modelmc = new MassmailContent; 
+		$defaultEmailID=$_GET['id'];
+		$modelmc->subject = MassmailContentDefault::get_email_subject($defaultEmailID);
+		$modelmc->massmail_body = MassmailContentDefault::get_email_body($defaultEmailID);
+		$modelmc->entry_date = new CDbExpression('NOW()');
+		$modelmc->shop_id = Yii::app()->user->shop_id;
+		$modelmc->status = 1;
+		//$modelmc->save();
+		if (!$modelmc->save()) {
+            print_r($modelmc->getErrors());         
+        }
+		Yii::app()->user->setFlash('success', Yii::t('Common', 'data_saved_successfully'));
+        $this->redirect(array('massmailContent/view', 'id' => $modelmc->id));
+
+	  		
+	}
+/*
+	public function actionUpdate($id) {
+		if ($model->save()) {
+                    DocumentAccess::model()->deleteAll('document_id=' . $id);
+                    for ($e = 0; $e < $totalAccess; $e++) {
+                        $document = new DocumentAccess;
+                        $document->document_id = $model->id;
+                        $document->user_id = $expression[$e];
+                        $document->save();
+                    }
+                    $modeldh->company_id = $model->company_id;
+                    $modeldh->document_id = $model->id;
+                    $modeldh->user_id = $model->user_id;
+                    $modeldh->project_id = $model->project_id;
+                    $modeldh->assignment_id = $model->assignment_id;
+                    $modeldh->catid = $model->catid;
+                    $modeldh->doc_name = $model->doc_name;
+                    $modeldh->doc_file = $model->doc_file;
+                    $modeldh->doc_type = $model->doc_type;
+                    $modeldh->doc_size = $model->doc_size;
+                    $modeldh->summary = $model->summary;
+                    $modeldh->up_dated = $model->up_dated;
+                    $modeldh->access_user = $model->access_user;
+                    $modeldh->modified_by = Yii::app()->user->id;
+                    $modeldh->modified_on = date('Y-m-d H:i');
+                    $modeldh->evolution = 'Edited';
+                    $modeldh->save();
+                    Yii::app()->user->setFlash('success', Yii::t('Common', 'data_saved_successfully'));
+                    $this->redirect(array('view', 'id' => $model->id));
+                }
+	}
+	*/
 	/**
 	 * Lists all models.
 	 */

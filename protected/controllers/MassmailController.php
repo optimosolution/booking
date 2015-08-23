@@ -50,7 +50,7 @@ class MassmailController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete', 'send','mailSend','displayMessage'),
+                'actions' => array('create', 'update', 'admin', 'delete', 'send','mailSend','dynamiccities'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -73,15 +73,20 @@ class MassmailController extends Controller {
             $this->performAjaxValidation($model);       
     }
 
+   public function actionDynamiccities()
+    {
+        $data=MassmailContent::model()->findAll('parent_id=:parent_id', 
+                      array(':parent_id'=>(int) $_POST['id']));
+     
+        $data=CHtml::listData($data,'id','massmail_body');
+        foreach($data as $value=>$massmail_body)
+        {
+            echo CHtml::tag('option',
+                       array('value'=>$value),CHtml::encode($massmail_body),true);
+        }
+    }
     public function actionMailSend() {
         
-            $customerList = Yii::app()->request->getParam('idList');
-            
-            $allCustomers = (is_array($customerList)) ? implode(",", $customerList) : $customerList;
-            //print $allCustomers;
-
-            //print $allCustomers ;
-
             $model = new Massmail;
 
         // Uncomment the following line if AJAX validation is needed
@@ -89,12 +94,9 @@ class MassmailController extends Controller {
 
         if (isset($_POST['Massmail'])) {
             $model->attributes = $_POST['Massmail'];
-
-
-            $model->users= $allCustomers; //getting allcustomer's emial address //// plan is to get user Id first then email address
             
             $mail_subject=MassmailContent::get_subject($model->mail_content_id);
-            $message_body=MassmailContent::get_message_body($model->mail_content_id);
+            $message_body=htmlspecialchars_decode(MassmailContent::get_message_body($model->mail_content_id));
             
             $model->send_by = Yii::app()->user->id;
             $model->send_on = new CDbExpression('NOW()');
@@ -103,7 +105,7 @@ class MassmailController extends Controller {
 
             $to = Yii::app()->params['adminEmail'];
             $bccList='';
-            $bccList = $allCustomers;
+            $bccList =  $model->users;
             $subject = $mail_subject;
             $message = $message_body;
             //$fromName = Yii::app()->params['Companyname'];
@@ -205,6 +207,7 @@ class MassmailController extends Controller {
             $model->attributes = $_POST['Massmail'];
             $model->modified_on = new CDbExpression('NOW()');
             $model->modified_by = Yii::app()->user->id;
+            $model->update_date = new CDbExpression('NOW()');
             if ($model->save()) {
                 Yii::app()->user->setFlash('success', 'Mass Mail has been updated successfully');
                 $this->redirect(array('view', 'id' => $model->id));

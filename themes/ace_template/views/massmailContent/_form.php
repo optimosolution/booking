@@ -24,9 +24,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="form-group marginBot10px">
-		<?php echo $form->labelEx($model,'subject', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
-		<div class="col-sm-9">
-		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->labelEx($model,'subject', array('class' =>'col-sm-1 control-label no-padding-right')); ?>
+		<div class="col-sm-11">
+		<?php echo $form->textField($model,'subject',array('size'=>90,'maxlength'=>300)); ?>
 		<?php echo $form->error($model,'subject'); ?>	
 		</div>
 	</div>
@@ -34,8 +34,8 @@
 
 	
 	<div class="form-group marginBot10px">
-		<?php echo $form->labelEx($model,'massmail_body', array('class' =>'col-sm-2 control-label no-padding-right')); ?>
-		<div class="col-sm-9">
+		<?php echo $form->labelEx($model,'massmail_body', array('class' =>'col-sm-1 control-label no-padding-right')); ?>
+		<div class="col-sm-11">
 		<?php
 		    $this->widget('application.extensions.yii-ckeditor.CKEditorWidget', array(
 		        'model' => $model,

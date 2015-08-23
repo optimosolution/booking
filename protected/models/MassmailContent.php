@@ -33,8 +33,8 @@ class MassmailContent extends CActiveRecord
 		return array(
 			array('subject, massmail_body, entry_date ,shop_id', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
-			array('subject', 'length', 'max'=>200),
-			array('update_date,status,attached_file,shop_id', 'safe'),
+			//array('subject', 'length', 'max'=>200),
+			array('subject,update_date,status,attached_file,shop_id', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, subject, massmail_body, entry_date, update_date', 'safe', 'on'=>'search'),
@@ -98,6 +98,7 @@ class MassmailContent extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			 'sort' => array('defaultOrder' => 'entry_date DESC'),
 		));
 	}
 
